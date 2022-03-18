@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.hot.batis.HotPropertiesConfigure,\
+  org.hot.batis.HotService

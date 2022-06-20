@@ -1,3 +1,13 @@
-org\hot\batis\HotService.class
+org\hot\batis\gray\InterceptorConfig.class
 org\hot\batis\HotService$WatchThread.class
+org\hot\batis\gray\LBRuleConfig.class
+org\hot\batis\gray\MyEnvironmentPostProcessor.class
+org\hot\batis\util\ThreadLocalUtil.class
+org\hot\batis\gray\RequestHandlerInterceptor.class
+org\hot\batis\gray\FeignConfig.class
 org\hot\batis\HotPropertiesConfigure.class
+org\hot\batis\HotService.class
+org\hot\batis\janino\ClassCompileTest.class
+org\hot\batis\gray\GrayLoadBalanceRule.class
+org\hot\batis\gray\FeignInterceptor.class
+org\hot\batis\janino\EvaluatorTest.class

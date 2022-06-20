@@ -4,12 +4,10 @@ import feign.RequestInterceptor;
 import feign.RequestTemplate;
 //import org.apache.logging.log4j.ThreadContext;
 import org.hot.batis.util.ThreadLocalUtil;
-import org.springframework.stereotype.Component;
 
 /**
  * feign请求拦截器
  */
-@Component
 public class FeignInterceptor implements RequestInterceptor {
 
     @Override

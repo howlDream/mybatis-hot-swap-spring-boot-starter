@@ -8,7 +8,9 @@ public class ThreadLocalUtil {
     private static ThreadLocal<Map<String,Object>> threadLocalMap = new ThreadLocal<>();
 
     public static Object get(String key) {
-        return threadLocalMap.get().get(key);
+        Map<String,Object> map = threadLocalMap.get();
+        if (map == null) return null;
+        return map.get(key);
     }
 
     public static void set(String key,Object value) {

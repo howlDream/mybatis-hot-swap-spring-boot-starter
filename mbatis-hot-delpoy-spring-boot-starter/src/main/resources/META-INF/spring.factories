@@ -1,3 +1,8 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   org.hot.batis.HotPropertiesConfigure,\
-  org.hot.batis.HotService
+  org.hot.batis.HotService,\
+  org.hot.batis.gray.LBRuleConfig,\
+  org.hot.batis.gray.InterceptorConfig,\
+  org.hot.batis.gray.FeignConfig
+
+org.springframework.boot.env.EnvironmentPostProcessor=org.hot.batis.gray.MyEnvironmentPostProcessor

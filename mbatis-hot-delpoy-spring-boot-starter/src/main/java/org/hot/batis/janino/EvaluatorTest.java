@@ -1,13 +1,18 @@
 package org.hot.batis.janino;
 
 import org.codehaus.commons.compiler.IScriptEvaluator;
-import org.codehaus.janino.ExpressionEvaluator;
-import org.codehaus.janino.JavaSourceClassLoader;
-import org.codehaus.janino.ScriptEvaluator;
+import org.codehaus.commons.compiler.ISimpleCompiler;
+import org.codehaus.janino.*;
+import org.codehaus.janino.util.ResourceFinderClassLoader;
+import org.codehaus.janino.util.resource.MapResourceCreator;
 import org.codehaus.janino.util.resource.MapResourceFinder;
 import org.codehaus.janino.util.resource.ResourceFinder;
+import org.codehaus.janino.util.resource.StringResource;
 
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class EvaluatorTest {
@@ -74,6 +79,36 @@ public class EvaluatorTest {
         Runnable runnable = (Runnable)class1.getDeclaredConstructor().newInstance();
         runnable.run();
     }
+
+
+//    /**
+//     * 另一种写法（不知哪个版本）
+//     * @param source
+//     * @param className
+//     * @param <T>
+//     * @return
+//     */
+//    public <T> T classCompileTest(String source,String className) {
+//        try {
+//            String fileName =  className.replace(".","/") + ".java";
+//
+//            CompilerFactory compilerFactory = new CompilerFactory();
+//            ICompiler compiler = compilerFactory.newCompiler();
+//            Map<String, byte[]> classes = new HashMap();
+//            compiler.setClassFileCreator(new MapResourceCreator(classes));
+//            compiler.setDebugLines(true);
+//            compiler.setDebugSource(true);
+//            compiler.setDebugVars(true);
+//            compiler.compile(new StringResource[]{new StringResource(fileName, source)});
+//            ClassLoader cl = new ResourceFinderClassLoader(new MapResourceFinder(classes), this.getClass().getClassLoader());
+//            Class c = cl.loadClass(className);
+//            T instance = (T) c.newInstance();
+//            return instance;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 
     public static void main(String[] args) {
         scriptEvaluatorTest();

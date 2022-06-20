@@ -17,12 +17,12 @@ public class FeignInterceptor implements RequestInterceptor {
         // 将本地线程变量中的灰度信息放入header中
         String grayVersion = (String) ThreadLocalUtil.get("gray-version");
         if (grayVersion != null) {
-            template.header("gray-version", new String[]{grayVersion});
+            template.header("gray-version", grayVersion);
         }
 
         String defaultVersion = (String)ThreadLocalUtil.get("default-version");
         if (defaultVersion != null) {
-            template.header("default-version", new String[]{defaultVersion});
+            template.header("default-version", defaultVersion);
         }
 
         // 线程追踪信息可以保存

@@ -4,10 +4,12 @@ import org.hot.batis.util.ThreadLocalUtil;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 /**
- * 如果服务不走网关的话，可以在这里保存灰度信息
+ * 如果服务不走网关的话，可以在这里保存传递灰度信息
  */
 @Component
 public class RequestHandlerInterceptor extends HandlerInterceptorAdapter {

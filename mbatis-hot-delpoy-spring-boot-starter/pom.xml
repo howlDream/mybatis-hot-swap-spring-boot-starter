@@ -10,6 +10,12 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--spring-cloud-dependencies-->
+        <spring.cloud.version>Hoxton.SR12</spring.cloud.version>
+        <tomcat.version>9.0.59</tomcat.version>
+        <spring-framework.version>5.2.20.RELEASE</spring-framework.version>
     </properties>
 
     <dependencies>
@@ -43,6 +49,7 @@
         <dependency> <!-- 引入log4j2依赖 -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
+            <version>2.3.12.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -54,7 +61,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-<!--            <scope>provided</scope>-->
+            <version>2.3.12.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -70,6 +77,36 @@
         </dependency>
 
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+
+
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun maven center</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 
     <build>
         <plugins>

@@ -49,6 +49,9 @@ public class HotService implements InitializingBean, ApplicationContextAware {
     @Value("${spring.profiles.active}")
     private String active;
 
+    @Value("${mybatis.mapperLocations}")
+    private String mapperLocationsUrl;
+
     @Autowired
     private HotPropertiesConfigure properties;
 
@@ -160,7 +163,7 @@ public class HotService implements InitializingBean, ApplicationContextAware {
         private Resource[] getMapperLocations() {
             try {
                 ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-                mapperLocations = resolver.getResources("classpath*:/mapper/*/*.xml");
+                mapperLocations = resolver.getResources(mapperLocationsUrl);
             } catch (Exception e) {
                 log.error("mapperLocations 获取失败",e);
                 mapperLocations = new Resource[0];

@@ -15,7 +15,6 @@ public class RequestHandlerInterceptor implements AsyncHandlerInterceptor {
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 日志中添加追踪id
-        ThreadContext.clearAll();
         if (request.getHeader("n-d-trace-id") != null) {
             ThreadContext.put("n-d-trace-id", request.getHeader("n-d-trace-id"));
         } else {

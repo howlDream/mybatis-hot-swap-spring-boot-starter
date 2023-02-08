@@ -59,7 +59,7 @@ public class HotService implements InitializingBean, ApplicationContextAware {
 
     @Override
     public void afterPropertiesSet() {
-        if (!"dev".equals(properties.getActive())) {
+        if (!"local".equals(active)) {
             // 判断是否开启了热部署
             // 非开发环境，不执行
             return;
